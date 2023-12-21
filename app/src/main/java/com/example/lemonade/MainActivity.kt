@@ -94,7 +94,7 @@ fun LemonApp() {
 
     }
 
-    val pictureId = when (state) {
+    val lemonadeImageResourceId = when (state) {
         UiState.Tree -> R.drawable.lemon_tree
         UiState.Lemon -> R.drawable.lemon_squeeze
         UiState.Lemonade -> R.drawable.lemon_drink
@@ -108,7 +108,7 @@ fun LemonApp() {
         UiState.EmptyGlass -> R.string.empty
     }
 
-    val textLabelId = when (state) {
+    val imageDescriptionTextId = when (state) {
         UiState.Tree -> R.string.select
         UiState.Lemon -> R.string.squeeze
         UiState.Lemonade -> R.string.drink
@@ -146,14 +146,14 @@ fun LemonApp() {
                     )
             ) {
                 Image(
-                    painter = painterResource(id = pictureId),
+                    painter = painterResource(id = lemonadeImageResourceId),
                     contentDescription = stringResource(id = imageDescriptionId),
                     contentScale = ContentScale.Fit,
                     modifier = Modifier.size(200.dp)
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
-            Text(text = stringResource(id = textLabelId))
+            Text(text = stringResource(id = imageDescriptionTextId))
 
         }
     }
